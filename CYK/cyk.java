@@ -5,25 +5,26 @@ static int n;
 static String G[][]=new String [10][100];
 static String in;
 static String PT[][][];
+static int max=0;
 static void putgrammer()
 {
-Scanner in=new Scanner(System.in);
-System.out.println("Before entering cover you grammer to Chomsky Normal Form\nAnd Then Enter");
+Scanner s=new Scanner(System.in);
+System.out.println("Before entering convert you grammer to Chomsky Normal Form\nAnd Then Enter");
 System.out.println("Enter number of non-terminal");
-n=in.nextInt();
+n=s.nextInt();
 System.out.println("Enter all Non-Terminals");
 for(int i=0;i<n;i++)
 {
-G[i][0]=in.next();
+G[i][0]=s.next();
 }
 for(int i=0;i<n;i++)
 {
 System.out.println("Enter number of production of "+G[i][0]);
-G[i][1]=in.next();
+G[i][1]=s.next();
 System.out.println("Enter productions of "+G[i][0]);
 for(int j=2;j<=Integer.parseInt(G[i][1])+1;j++)
 {
-G[i][j]=in.next();
+G[i][j]=s.next();
 }
 }
 }
@@ -60,6 +61,8 @@ for(int j=2;j<=(Integer.parseInt(G[i][1]))+1;j++)
 {
 if(input.substring(i1,i1+1).equals(G[i][j]))
 PT[k++][i1][i1+1]=G[i][0];
+if(max<k)
+max=k-1;
 }
 }
 k=0;
@@ -82,6 +85,8 @@ for(int k2=0;k2<100;k2++)
 if((G[gi][gj].substring(0,1).equals(PT[k][i][j]))&&(G[gi][gj].substring(1,2).equals(PT[k2][j][i+m])))
 {
 PT[k1++][i][i+m]=G[gi][0];
+if(max<k1)
+max=k1-1;
 }
 }
 }
@@ -91,7 +96,7 @@ PT[k1++][i][i+m]=G[gi][0];
 }
 /*
 for checking each matrix derivation remove comments
-for(int k1=0;k1<100;k1++)
+for(int k1=0;k1<=max;k1++)
 {
 for(int i=0;i<=input.length();i++)
 {
