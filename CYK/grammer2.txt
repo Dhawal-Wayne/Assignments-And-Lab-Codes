@@ -1,1 +1,0 @@
-5 S A B C D 5 SS AB BA AC BD 1 a 1 b 1 SB 1 SA 
