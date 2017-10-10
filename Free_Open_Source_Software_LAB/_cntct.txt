@@ -1,0 +1,5 @@
+faruk:sk:flatno:gntr:andhra:5322233
+name2:2urname:flatno2:vizianagaram:andhra:520003
+name3:3surname:flatno3:vizag:andhra:5207789
+name3:4surname:flatno4:tenali:andhra:5388000
+name5:6surname:flatno5:guntur:amdhra:896690
